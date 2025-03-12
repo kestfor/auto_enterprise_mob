@@ -375,6 +375,7 @@ const PersonFilter$json = {
   '2': [
     {'1': 'roles', '3': 1, '4': 3, '5': 14, '6': '.main.Role', '10': 'roles'},
     {'1': 'brigadeId', '3': 2, '4': 1, '5': 5, '9': 0, '10': 'brigadeId', '17': true},
+    {'1': 'ids', '3': 3, '4': 3, '5': 5, '10': 'ids'},
   ],
   '8': [
     {'1': '_brigadeId'},
@@ -384,7 +385,8 @@ const PersonFilter$json = {
 /// Descriptor for `PersonFilter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List personFilterDescriptor = $convert.base64Decode(
     'CgxQZXJzb25GaWx0ZXISIAoFcm9sZXMYASADKA4yCi5tYWluLlJvbGVSBXJvbGVzEiEKCWJyaW'
-    'dhZGVJZBgCIAEoBUgAUglicmlnYWRlSWSIAQFCDAoKX2JyaWdhZGVJZA==');
+    'dhZGVJZBgCIAEoBUgAUglicmlnYWRlSWSIAQESEAoDaWRzGAMgAygFUgNpZHNCDAoKX2JyaWdh'
+    'ZGVJZA==');
 
 @$core.Deprecated('Use repairWorkFilterDescriptor instead')
 const RepairWorkFilter$json = {
@@ -398,6 +400,7 @@ const RepairWorkFilter$json = {
     {'1': 'transportId', '3': 4, '4': 1, '5': 5, '9': 4, '10': 'transportId', '17': true},
     {'1': 'servicePersonnelId', '3': 5, '4': 1, '5': 5, '9': 5, '10': 'servicePersonnelId', '17': true},
     {'1': 'unitId', '3': 6, '4': 1, '5': 5, '9': 6, '10': 'unitId', '17': true},
+    {'1': 'ids', '3': 9, '4': 3, '5': 5, '10': 'ids'},
   ],
   '3': [RepairWorkFilter_DateRange$json],
   '8': [
@@ -428,12 +431,12 @@ final $typed_data.Uint8List repairWorkFilterDescriptor = $convert.base64Decode(
     'gFSAJSCWJyaWdhZGVJZIgBARJDCglkYXRlUmFuZ2UYAyABKAsyIC5tYWluLlJlcGFpcldvcmtG'
     'aWx0ZXIuRGF0ZVJhbmdlSANSCWRhdGVSYW5nZYgBARIlCgt0cmFuc3BvcnRJZBgEIAEoBUgEUg'
     't0cmFuc3BvcnRJZIgBARIzChJzZXJ2aWNlUGVyc29ubmVsSWQYBSABKAVIBVISc2VydmljZVBl'
-    'cnNvbm5lbElkiAEBEhsKBnVuaXRJZBgGIAEoBUgGUgZ1bml0SWSIAQEadwoJRGF0ZVJhbmdlEj'
-    'YKCGRhdGVGcm9tGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIIZGF0ZUZyb20S'
-    'MgoGZGF0ZVRvGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIGZGF0ZVRvQhEKD1'
-    '90cmFuc3BvcnRCcmFuZEIQCg5fdHJhbnNwb3J0VHlwZUIMCgpfYnJpZ2FkZUlkQgwKCl9kYXRl'
-    'UmFuZ2VCDgoMX3RyYW5zcG9ydElkQhUKE19zZXJ2aWNlUGVyc29ubmVsSWRCCQoHX3VuaXRJZA'
-    '==');
+    'cnNvbm5lbElkiAEBEhsKBnVuaXRJZBgGIAEoBUgGUgZ1bml0SWSIAQESEAoDaWRzGAkgAygFUg'
+    'NpZHMadwoJRGF0ZVJhbmdlEjYKCGRhdGVGcm9tGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp'
+    'bWVzdGFtcFIIZGF0ZUZyb20SMgoGZGF0ZVRvGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIGZGF0ZVRvQhEKD190cmFuc3BvcnRCcmFuZEIQCg5fdHJhbnNwb3J0VHlwZUIMCgpf'
+    'YnJpZ2FkZUlkQgwKCl9kYXRlUmFuZ2VCDgoMX3RyYW5zcG9ydElkQhUKE19zZXJ2aWNlUGVyc2'
+    '9ubmVsSWRCCQoHX3VuaXRJZA==');
 
 @$core.Deprecated('Use transportUnitListDescriptor instead')
 const TransportUnitList$json = {

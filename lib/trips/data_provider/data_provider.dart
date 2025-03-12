@@ -30,6 +30,15 @@ class DataProvider {
     return data.trips;
   }
 
+  Future<Trip?> getTripById(int id) async {
+    final res = await client.getFilteredTrips(TripFilter(ids: [id]));
+    if (res.trips.isEmpty) {
+      return null;
+    } else {
+      return res.trips[0];
+    }
+  }
+
   Future<void> createTrip(Trip trip) async {
     final data = await client.createTrip(trip, options: grpc.CallOptions(timeout: const Duration(seconds: 3)));
     trip.id = data.id;

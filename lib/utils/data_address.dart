@@ -1,2 +1,2 @@
-const host = "10.9.4.236";
-const port = 12345;
+String host = "192.168.26.192";
+int port = 12345;

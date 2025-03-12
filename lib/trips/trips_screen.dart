@@ -118,7 +118,7 @@ class _TripsScreenState extends State<TripsScreen> {
       body: Column(
         children: [
           Row(children: [SizedBox(
-              width: 340,
+              width: 295,
               height: 60,
               child: searchWidget()), CategoryButton(
             label: "filter",

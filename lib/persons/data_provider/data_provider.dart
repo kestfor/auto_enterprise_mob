@@ -28,6 +28,44 @@ class DataProvider {
     return res;
   }
 
+  Future<Person?> getPersonById(int id) async {
+    final res = await client.getFilteredPersons(PersonFilter(ids: [id]));
+    if (res.persons.isEmpty) {
+      return null;
+    } else {
+      return res.persons[0];
+    }
+  }
+
+  Future<Brigade?> getBrigadeById(int id) async {
+    final res = await client.getAllBrigades(Empty());
+    for (var item in res.brigades) {
+      if (item.id == id) {
+        return item;
+      }
+    }
+    return null;
+  }
+
+  Future<RepairWork?> getRepairWorkById(int id) async {
+    final res = await client.getFilteredRepairWorks(RepairWorkFilter(ids: [id]));
+    if (res.repairWorks.isEmpty) {
+      return null;
+    } else {
+      return res.repairWorks[0];
+    }
+  }
+
+  Future<TransportUnit?> getUnitById(int id) async {
+    final res = await client.getAllTransportUnits(Empty());
+    for (var item in res.units) {
+      if (item.id == id) {
+        return item;
+      }
+    }
+    return null;
+  }
+
   Future<void> updatePerson(Person person) async {
     await client.alterPerson(person);
   }

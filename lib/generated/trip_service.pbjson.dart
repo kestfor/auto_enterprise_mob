@@ -106,6 +106,7 @@ const TripFilter$json = {
     {'1': 'dateFrom', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 3, '10': 'dateFrom', '17': true},
     {'1': 'dateTo', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 4, '10': 'dateTo', '17': true},
     {'1': 'type', '3': 6, '4': 1, '5': 9, '9': 5, '10': 'type', '17': true},
+    {'1': 'ids', '3': 7, '4': 3, '5': 5, '10': 'ids'},
   ],
   '8': [
     {'1': '_routeId'},
@@ -123,8 +124,9 @@ final $typed_data.Uint8List tripFilterDescriptor = $convert.base64Decode(
     'gCIAEoBUgBUghkcml2ZXJJZIgBARIlCgt0cmFuc3BvcnRJZBgDIAEoBUgCUgt0cmFuc3BvcnRJ'
     'ZIgBARI7CghkYXRlRnJvbRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIA1IIZG'
     'F0ZUZyb22IAQESNwoGZGF0ZVRvGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgE'
-    'UgZkYXRlVG+IAQESFwoEdHlwZRgGIAEoCUgFUgR0eXBliAEBQgoKCF9yb3V0ZUlkQgsKCV9kcm'
-    'l2ZXJJZEIOCgxfdHJhbnNwb3J0SWRCCwoJX2RhdGVGcm9tQgkKB19kYXRlVG9CBwoFX3R5cGU=');
+    'UgZkYXRlVG+IAQESFwoEdHlwZRgGIAEoCUgFUgR0eXBliAEBEhAKA2lkcxgHIAMoBVIDaWRzQg'
+    'oKCF9yb3V0ZUlkQgsKCV9kcml2ZXJJZEIOCgxfdHJhbnNwb3J0SWRCCwoJX2RhdGVGcm9tQgkK'
+    'B19kYXRlVG9CBwoFX3R5cGU=');
 
 @$core.Deprecated('Use tripListDescriptor instead')
 const TripList$json = {

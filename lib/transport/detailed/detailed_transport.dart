@@ -5,6 +5,7 @@ import 'package:auto_enterprise/transport/data_provider/data_provider.dart';
 import 'package:auto_enterprise/transport/garage/garage_list.dart';
 import 'package:auto_enterprise/trips/data_provider/data_provider.dart' as tdp;
 import 'package:auto_enterprise/utils/bottom_category_selector.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:auto_enterprise/utils/wrappers/transport_wrapper.dart';
 import 'package:flutter/cupertino.dart';
@@ -204,6 +205,10 @@ class _EditableTransportState extends State<EditableTransport> {
         onPressed: () {
           selectRoute(context, dataProvider, onSelected);
         },
+        onLongPress: () {
+          int id = routeId ?? 0;
+          pushDetailedRoute<ts.Route>(context, id);
+        },
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 16),
           shape: RoundedRectangleBorder(
@@ -222,6 +227,9 @@ class _EditableTransportState extends State<EditableTransport> {
         child: OutlinedButton(
           onPressed: () {
             selectGarageFacility(context, dataProvider);
+          },
+          onLongPress: () {
+            pushDetailedRoute<GarageFacility>(context, widget.transport.garageFacilityId);
           },
           style: OutlinedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.primary,

@@ -3,6 +3,7 @@ import 'package:auto_enterprise/repairs/units/unit_card.dart';
 import 'package:auto_enterprise/transport/detailed/utils/validate_inputer.dart';
 import 'package:auto_enterprise/trips/data_provider/data_provider.dart' as rp;
 import 'package:auto_enterprise/utils/date_picker.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/notifications/notification.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:auto_enterprise/utils/selectors/select_button.dart';
@@ -211,6 +212,9 @@ class _EditableRepairState extends State<EditableRepair> {
                       SizedBox(
                           width: double.infinity,
                           child: SelectButton(
+                              onLongPress: () {
+                                pushDetailedRoute<TransportUnit>(context, unitId?? 0);
+                              },
                               label: "Unit ID: ${unitId != null ? unitId!.toString() : "null"}",
                               searchableListBuilder: unitListBuilder,
                               fetchFunction: personsProvider.fetchTransportUnits)),

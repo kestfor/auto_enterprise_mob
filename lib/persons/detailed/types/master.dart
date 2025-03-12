@@ -1,6 +1,7 @@
 import "package:auto_enterprise/persons/data_provider/data_provider.dart" as pp;
 import 'package:auto_enterprise/persons/detailed/types/utils/utils.dart';
 import 'package:auto_enterprise/persons/person_list.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -90,6 +91,9 @@ class _EditableMasterState extends State<EditableMaster> {
         child: OutlinedButton(
           onPressed: () async {
             selectManager(context, personProvider, widget.masterInfo);
+          },
+          onLongPress: () {
+            pushDetailedRoute<Person>(context, widget.masterInfo.managerId);
           },
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 16),

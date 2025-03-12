@@ -1,6 +1,7 @@
 import "package:auto_enterprise/persons/data_provider/data_provider.dart" as pp;
 import 'package:auto_enterprise/persons/detailed/types/utils/utils.dart';
 import 'package:auto_enterprise/persons/person_list.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -94,17 +95,20 @@ class _EditableForemanState extends State<EditableForeman> {
     return SizedBox(
         width: double.infinity,
         child: OutlinedButton(
-      onPressed: () async {
-        selectMaster(context, personProvider, widget.foremanInfo);
-      },
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
-      child: Text("Master ID: $id", style: const TextStyle(fontSize: 16, color: Colors.black54)),
-    ));
+          onPressed: () async {
+            selectMaster(context, personProvider, widget.foremanInfo);
+          },
+          onLongPress: () {
+            pushDetailedRoute<Person>(context, widget.foremanInfo.masterId);
+          },
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          child: Text("Master ID: $id", style: const TextStyle(fontSize: 16, color: Colors.black54)),
+        ));
   }
 
   @override

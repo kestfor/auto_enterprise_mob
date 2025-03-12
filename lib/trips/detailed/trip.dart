@@ -2,6 +2,7 @@ import 'package:auto_enterprise/generated/google/protobuf/timestamp.pb.dart';
 import 'package:auto_enterprise/trips/detailed/passengers_trip.dart';
 import 'package:auto_enterprise/utils/bottom_category_selector.dart';
 import 'package:auto_enterprise/utils/date_picker.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -95,6 +96,9 @@ class TripEditableState extends State<TripEditable> {
       child: OutlinedButton(
         onPressed: () {
           selectRoute(context, dataProvider, onSelected);
+        },
+        onLongPress: () {
+          pushDetailedRoute<ts.Route>(context, routeId?? 0);
         },
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 16),

@@ -21,6 +21,45 @@ class DataProvider {
     return ["sale", "purchase", "write-off"];
   }
 
+  Future<Transport?> getTransportById(int id) async {
+    final res = await client.getFilteredTransport(TransportFilter(ids: [id]));
+    if (res.transports.isEmpty) {
+      return null;
+    } else {
+      return res.transports[0];
+    }
+  }
+
+  Future<GarageFacility?> getGarageById(int id) async {
+    final res = await client.getAllGarages(Empty());
+    for (var item in res.garages) {
+      if (item.id == id) {
+        return item;
+      }
+    }
+    return null;
+  }
+
+  Future<TransportOperation?> getTransportOperationById(int id) async {
+    final res = await client.getFilteredOperations(OperationFilter(ids: [id]));
+    if (res.operations.isEmpty) {
+      return null;
+    } else {
+      return res.operations[0];
+    }
+  }
+
+  Future<Route?> getRouteById(int id) async {
+    final res = await client.getAllRoutes(Empty());
+    for (var item in res.routes) {
+      if (item.id == id) {
+        return item;
+      }
+    }
+    return null;
+  }
+
+
   Future<List<TransportOperation>> fetchTransportOperations({OperationFilter? filter}) async {
     if (filter != null) {
       return (await client.getFilteredOperations(filter,

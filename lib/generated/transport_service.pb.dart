@@ -950,6 +950,7 @@ class TransportFilter extends $pb.GeneratedMessage {
   factory TransportFilter({
     $core.int? routeId,
     $core.int? garageFacilityId,
+    $core.Iterable<$core.int>? ids,
   }) {
     final $result = create();
     if (routeId != null) {
@@ -957,6 +958,9 @@ class TransportFilter extends $pb.GeneratedMessage {
     }
     if (garageFacilityId != null) {
       $result.garageFacilityId = garageFacilityId;
+    }
+    if (ids != null) {
+      $result.ids.addAll(ids);
     }
     return $result;
   }
@@ -967,6 +971,7 @@ class TransportFilter extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransportFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'main'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'routeId', $pb.PbFieldType.O3, protoName: 'routeId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'garageFacilityId', $pb.PbFieldType.O3, protoName: 'garageFacilityId')
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -1008,6 +1013,9 @@ class TransportFilter extends $pb.GeneratedMessage {
   $core.bool hasGarageFacilityId() => $_has(1);
   @$pb.TagNumber(2)
   void clearGarageFacilityId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get ids => $_getList(2);
 }
 
 class ModifyRouteRequest extends $pb.GeneratedMessage {
@@ -1238,6 +1246,7 @@ class OperationFilter extends $pb.GeneratedMessage {
   factory OperationFilter({
     $2.Timestamp? dateFrom,
     $2.Timestamp? dateTo,
+    $core.Iterable<$core.int>? ids,
   }) {
     final $result = create();
     if (dateFrom != null) {
@@ -1245,6 +1254,9 @@ class OperationFilter extends $pb.GeneratedMessage {
     }
     if (dateTo != null) {
       $result.dateTo = dateTo;
+    }
+    if (ids != null) {
+      $result.ids.addAll(ids);
     }
     return $result;
   }
@@ -1255,6 +1267,7 @@ class OperationFilter extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'main'), createEmptyInstance: create)
     ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'dateFrom', protoName: 'dateFrom', subBuilder: $2.Timestamp.create)
     ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'dateTo', protoName: 'dateTo', subBuilder: $2.Timestamp.create)
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -1300,6 +1313,9 @@ class OperationFilter extends $pb.GeneratedMessage {
   void clearDateTo() => clearField(2);
   @$pb.TagNumber(2)
   $2.Timestamp ensureDateTo() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get ids => $_getList(2);
 }
 
 

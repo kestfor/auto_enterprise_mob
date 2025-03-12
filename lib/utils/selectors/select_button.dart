@@ -7,6 +7,7 @@ import '../searchable_list.dart';
 class SelectButton<T> extends StatelessWidget {
   final String label;
   final Function? onSelected;
+  final Function? onLongPress;
   final SearchableList<T> Function(List<T>) searchableListBuilder;
   final Future<List<T>> Function() fetchFunction;
 
@@ -14,6 +15,7 @@ class SelectButton<T> extends StatelessWidget {
       {Key? key,
       required this.label,
       this.onSelected,
+      this.onLongPress,
       required this.searchableListBuilder,
       required this.fetchFunction})
       : super(key: key);
@@ -21,19 +23,24 @@ class SelectButton<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-        onPressed: () {
-          performSelect(context, fetchFunction, onSelected);
-        },
-        style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          foregroundColor: Theme.of(context).colorScheme.onPrimary,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
+      onPressed: () {
+        performSelect(context, fetchFunction, onSelected);
+      },
+      onLongPress: () {
+        if (onLongPress != null) {
+          onLongPress!();
+        }
+      },
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
         ),
-        child: Text(label, style: const TextStyle(fontSize: 16)),
-      );
+      ),
+      child: Text(label, style: const TextStyle(fontSize: 16)),
+    );
   }
 
   void performSelect(context, Future<List<T>> Function() fetchFunction, Function? onSelected) async {

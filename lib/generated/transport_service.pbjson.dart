@@ -262,6 +262,7 @@ const TransportFilter$json = {
   '2': [
     {'1': 'routeId', '3': 1, '4': 1, '5': 5, '9': 0, '10': 'routeId', '17': true},
     {'1': 'garageFacilityId', '3': 2, '4': 1, '5': 5, '9': 1, '10': 'garageFacilityId', '17': true},
+    {'1': 'ids', '3': 3, '4': 3, '5': 5, '10': 'ids'},
   ],
   '8': [
     {'1': '_routeId'},
@@ -272,8 +273,8 @@ const TransportFilter$json = {
 /// Descriptor for `TransportFilter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List transportFilterDescriptor = $convert.base64Decode(
     'Cg9UcmFuc3BvcnRGaWx0ZXISHQoHcm91dGVJZBgBIAEoBUgAUgdyb3V0ZUlkiAEBEi8KEGdhcm'
-    'FnZUZhY2lsaXR5SWQYAiABKAVIAVIQZ2FyYWdlRmFjaWxpdHlJZIgBAUIKCghfcm91dGVJZEIT'
-    'ChFfZ2FyYWdlRmFjaWxpdHlJZA==');
+    'FnZUZhY2lsaXR5SWQYAiABKAVIAVIQZ2FyYWdlRmFjaWxpdHlJZIgBARIQCgNpZHMYAyADKAVS'
+    'A2lkc0IKCghfcm91dGVJZEITChFfZ2FyYWdlRmFjaWxpdHlJZA==');
 
 @$core.Deprecated('Use modifyRouteRequestDescriptor instead')
 const ModifyRouteRequest$json = {
@@ -338,6 +339,7 @@ const OperationFilter$json = {
   '2': [
     {'1': 'dateFrom', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dateFrom'},
     {'1': 'dateTo', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dateTo'},
+    {'1': 'ids', '3': 3, '4': 3, '5': 5, '10': 'ids'},
   ],
 };
 
@@ -345,5 +347,5 @@ const OperationFilter$json = {
 final $typed_data.Uint8List operationFilterDescriptor = $convert.base64Decode(
     'Cg9PcGVyYXRpb25GaWx0ZXISNgoIZGF0ZUZyb20YASABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
     'ltZXN0YW1wUghkYXRlRnJvbRIyCgZkYXRlVG8YAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
-    'ZXN0YW1wUgZkYXRlVG8=');
+    'ZXN0YW1wUgZkYXRlVG8SEAoDaWRzGAMgAygFUgNpZHM=');
 

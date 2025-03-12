@@ -1405,6 +1405,7 @@ class PersonFilter extends $pb.GeneratedMessage {
   factory PersonFilter({
     $core.Iterable<Role>? roles,
     $core.int? brigadeId,
+    $core.Iterable<$core.int>? ids,
   }) {
     final $result = create();
     if (roles != null) {
@@ -1412,6 +1413,9 @@ class PersonFilter extends $pb.GeneratedMessage {
     }
     if (brigadeId != null) {
       $result.brigadeId = brigadeId;
+    }
+    if (ids != null) {
+      $result.ids.addAll(ids);
     }
     return $result;
   }
@@ -1422,6 +1426,7 @@ class PersonFilter extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PersonFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'main'), createEmptyInstance: create)
     ..pc<Role>(1, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.KE, valueOf: Role.valueOf, enumValues: Role.values, defaultEnumValue: Role.foreman)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'brigadeId', $pb.PbFieldType.O3, protoName: 'brigadeId')
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -1457,6 +1462,9 @@ class PersonFilter extends $pb.GeneratedMessage {
   $core.bool hasBrigadeId() => $_has(1);
   @$pb.TagNumber(2)
   void clearBrigadeId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get ids => $_getList(2);
 }
 
 class RepairWorkFilter_DateRange extends $pb.GeneratedMessage {
@@ -1537,6 +1545,7 @@ class RepairWorkFilter extends $pb.GeneratedMessage {
     $core.int? unitId,
     $core.String? transportBrand,
     $core.String? transportType,
+    $core.Iterable<$core.int>? ids,
   }) {
     final $result = create();
     if (states != null) {
@@ -1563,6 +1572,9 @@ class RepairWorkFilter extends $pb.GeneratedMessage {
     if (transportType != null) {
       $result.transportType = transportType;
     }
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
     return $result;
   }
   RepairWorkFilter._() : super();
@@ -1578,6 +1590,7 @@ class RepairWorkFilter extends $pb.GeneratedMessage {
     ..a<$core.int>(6, _omitFieldNames ? '' : 'unitId', $pb.PbFieldType.O3, protoName: 'unitId')
     ..aOS(7, _omitFieldNames ? '' : 'transportBrand', protoName: 'transportBrand')
     ..aOS(8, _omitFieldNames ? '' : 'transportType', protoName: 'transportType')
+    ..p<$core.int>(9, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -1669,6 +1682,9 @@ class RepairWorkFilter extends $pb.GeneratedMessage {
   $core.bool hasTransportType() => $_has(7);
   @$pb.TagNumber(8)
   void clearTransportType() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<$core.int> get ids => $_getList(8);
 }
 
 class TransportUnitList extends $pb.GeneratedMessage {

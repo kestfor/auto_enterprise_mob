@@ -92,7 +92,7 @@ class _OperationsScreenState extends State<OperationsScreen> {
             Row(children: [
               SizedBox(
                   height: 60,
-                  width: 340, child: searchWidget(updateSearchQuery)),
+                  width: 295, child: searchWidget(updateSearchQuery)),
               CategoryButton(
                 label: "filter",
                 onTap: () {

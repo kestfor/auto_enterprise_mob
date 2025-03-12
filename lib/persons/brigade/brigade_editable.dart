@@ -1,6 +1,7 @@
 import 'package:auto_enterprise/persons/data_provider/data_provider.dart';
 import 'package:auto_enterprise/persons/person_list.dart';
 import 'package:auto_enterprise/persons/persons_screen.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:auto_enterprise/utils/utils.dart';
 import 'package:auto_enterprise/utils/wrappers/person_wrapper.dart';
@@ -183,6 +184,9 @@ class _EditableBrigadeState extends State<EditableBrigade> {
         child: OutlinedButton(
           onPressed: () {
             selectPerson(context, dataProvider);
+          },
+          onLongPress: () {
+            pushDetailedRoute<Person>(context, widget.brigade.foremanId);
           },
           style: OutlinedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.primary,

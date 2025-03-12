@@ -1,4 +1,5 @@
 import 'package:auto_enterprise/routes/route_screen.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,9 @@ Widget transportSelectorButton(BuildContext context, int? transportId, transport
     child: OutlinedButton(
       onPressed: () {
         selectTransport(context, transportProvider, onSelected);
+      },
+      onLongPress: () {
+        pushDetailedRoute<Transport>(context, transportId?? 0);
       },
       style: OutlinedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -89,6 +93,9 @@ Widget driverSelectorButton(
     child: OutlinedButton(
       onPressed: () {
         selectDriver(context, transportId, driverProvider, onSelected);
+      },
+      onLongPress: () {
+        pushDetailedRoute<Person>(context, driverId?? 0);
       },
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -209,6 +216,9 @@ Widget servicePersonnelSelectorButton(BuildContext context, int? id, dataProvide
     child: OutlinedButton(
       onPressed: () {
         selectServicePersonnel(context, dataProvider, onSelected);
+      },
+      onLongPress: () {
+        pushDetailedRoute<Person>(context, id?? 0);
       },
       style: OutlinedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,

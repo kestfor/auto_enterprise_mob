@@ -135,6 +135,7 @@ message RepairWorkList {
 message PersonFilter {
   repeated Role roles = 1;
   optional int32 brigadeId = 2;
+  repeated int32 ids = 3;
 
 }
 
@@ -153,6 +154,7 @@ message RepairWorkFilter {
   optional int32 transportId = 4;
   optional int32 servicePersonnelId = 5;
   optional int32 unitId = 6;
+  repeated int32 ids = 9;
 }
 
 message TransportUnitList {

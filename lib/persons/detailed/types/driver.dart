@@ -1,5 +1,6 @@
 import "package:auto_enterprise/persons/data_provider/data_provider.dart" as pp;
 import 'package:auto_enterprise/transport/data_provider/data_provider.dart';
+import 'package:auto_enterprise/utils/detailed_mapper.dart';
 import 'package:auto_enterprise/utils/notifications/notification.dart';
 import 'package:auto_enterprise/utils/search_filters/filters.dart';
 import 'package:auto_enterprise/utils/searchable_list.dart';
@@ -60,6 +61,9 @@ class _EditableDriverState extends State<EditableDriver> {
       child: OutlinedButton(
         onPressed: () {
           selectTransport(context, transportProvider, widget.driverInfo);
+        },
+        onLongPress: () {
+          pushDetailedRoute<Transport>(context, widget.driverInfo.transportId);
         },
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -159,6 +163,9 @@ class _EditableDriverState extends State<EditableDriver> {
       onPressed: () async {
         selectBrigade(context, personProvider, widget.driverInfo);
       },
+      onLongPress: () {
+        pushDetailedRoute<Brigade>(context, widget.driverInfo.brigadeId);
+      },
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(vertical: 16),
         shape: RoundedRectangleBorder(
@@ -170,22 +177,13 @@ class _EditableDriverState extends State<EditableDriver> {
   }
 
   Widget transportAndBrigadeSelectors() {
-
     return Row(
-      children: [
-        transportSelectorButton(),
-        const SizedBox(width: 10),
-        brigadeSelectorButton()
-      ],
+      children: [transportSelectorButton(), const SizedBox(width: 10), brigadeSelectorButton()],
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      transportAndBrigadeSelectors(),
-      const SizedBox(height: 16),
-      saveButton(saveChanges)
-    ]);
+    return Column(children: [transportAndBrigadeSelectors(), const SizedBox(height: 16), saveButton(saveChanges)]);
   }
 }

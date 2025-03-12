@@ -97,7 +97,7 @@ class TransportScreenState extends State<TransportScreen> {
         children: [
           Row(children: [SizedBox(
               height: 60,
-              width: 285,
+              width: 230,
               child: searchWidget()), CategoryButton(
             label: "mileage report",
             onTap: () {

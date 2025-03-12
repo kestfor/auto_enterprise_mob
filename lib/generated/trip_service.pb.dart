@@ -394,6 +394,7 @@ class TripFilter extends $pb.GeneratedMessage {
     $2.Timestamp? dateFrom,
     $2.Timestamp? dateTo,
     $core.String? type,
+    $core.Iterable<$core.int>? ids,
   }) {
     final $result = create();
     if (routeId != null) {
@@ -414,6 +415,9 @@ class TripFilter extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
     return $result;
   }
   TripFilter._() : super();
@@ -427,6 +431,7 @@ class TripFilter extends $pb.GeneratedMessage {
     ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'dateFrom', protoName: 'dateFrom', subBuilder: $2.Timestamp.create)
     ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'dateTo', protoName: 'dateTo', subBuilder: $2.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'type')
+    ..p<$core.int>(7, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -508,6 +513,9 @@ class TripFilter extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(5);
   @$pb.TagNumber(6)
   void clearType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get ids => $_getList(6);
 }
 
 class TripList extends $pb.GeneratedMessage {
